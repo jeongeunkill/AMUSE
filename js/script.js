@@ -199,3 +199,5 @@ function slide(direction) {
 
   // 초기화
   updateVisibleImages();
+
+  

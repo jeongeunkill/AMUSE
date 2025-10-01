@@ -11,7 +11,7 @@ body {
 /* 상단 팝업 */
 .top-popup {
   position: fixed;
-  top: 0;
+  top: 0px;
   left: 0;
   width: 100%;
   background-color: #f8cfc9;
@@ -25,8 +25,9 @@ body {
 
 /* 헤더 전체 */
 .main-header {
+  background: rgba(255,255,255,.8);
   position: fixed;
-  top: 55px;
+  top: 54px;
   left: 0;
   width: 100%;
   padding: 30px;
@@ -327,8 +328,7 @@ body {
 
     /* 메인 메뉴 */
      .main_menu {
-  display: flex;
-  flex-wrap: wrap;          /* 줄바꿈 허용 */
+  display: flex;        /* 줄바꿈 허용 */
   justify-content: center;  /* 가운데 정렬 */
   gap: 30px;
   padding: 50px 0;
@@ -338,6 +338,15 @@ body {
 
 .main-menu-item {
   text-align: center;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-family: sans-serif;
+  flex: 1 1 calc(25% - 30px); /* ✅ 한 줄에 4개 */
+  box-sizing: border-box;
+}
+.main_menu p{
+text-align: center;
   text-decoration: none;
   color: black;
   font-weight: bold;
@@ -357,7 +366,17 @@ body {
 .main-menu-item:hover {
   opacity: 0.8;
 }
-
+@media (max-width: 1024px) {
+  .main_menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
 /* ✅ 태블릿 (768px 이하) → 2개씩 */
 @media (max-width: 768px) {
   .main-menu-item {
@@ -372,7 +391,7 @@ body {
 
 /* ✅ 모바일 (480px 이하) → 1개씩 */
 @media (max-width: 480px) {
-  .main-menu{
+  .main_menu{
     gap: 5px !important;
     
   }
@@ -380,6 +399,9 @@ body {
   flex: 1 1 calc(25% - 30px); /* 한 줄에 4개 (gap 고려) */
   box-sizing: border-box;
   
+}
+.main-menu-item>div{
+  font-size: 14px;
 }
 
   .main-menu-item img {
@@ -396,7 +418,10 @@ body {
 
   .new {
   width: min(1200px, 100%);
-  padding: 0 16px; /* 좌우 여백 */
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  padding: 0 16px;
 }
 
 .new h2 {
